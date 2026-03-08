@@ -26,7 +26,7 @@ export default (locals) => {
               // note that here we use require instead of import
               // i.e., can't  reuse App.jsx
               // eslint-disable-next-line no-undef
-              import={(path) => require(`./content/${path}`)}
+              loadContent={(path) => require(`./content/${path}`)}
             />
           </div>
           {isPrintPage(locals.path) ? (
