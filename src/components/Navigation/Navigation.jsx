@@ -28,7 +28,7 @@ function NavigationItem({
 }) {
   const location = useLocation();
   const classes =
-    "text-gray-100 dark:text-gray-100 text-sm font-light uppercase hover:text-blue-200";
+    "text-gray-100 dark:text-gray-100 text-sm font-semibold uppercase hover:text-blue-200";
 
   const getActiveState = (isNavLinkActive) => {
     if (isCustomActive) {
@@ -194,7 +194,7 @@ function Navigation({ links, pathname, hash = "", toggleSidebar }) {
               ]}
             />
           </nav>
-          <div className="inline-flex items-center ml-[18px]">
+          <div className="inline-flex items-center gap-x-[18px] ml-[18px]">
             <HelloDarkness />
             {mounted && (
               <DocSearch
@@ -202,7 +202,7 @@ function Navigation({ links, pathname, hash = "", toggleSidebar }) {
                 apiKey={"fac401d1a5f68bc41f01fb6261661490"}
                 indexName="webpack-js-org"
                 disableUserPersonalization={true}
-                placeholder="Search webpack documentation"
+                placeholder="Search"
                 transformItems={(items) =>
                   items.map(({ url, ...others }) => {
                     const { origin } = new URL(url);
@@ -246,7 +246,7 @@ function Navigation({ links, pathname, hash = "", toggleSidebar }) {
                         title={child.title}
                         className={() =>
                           isActive
-                            ? `!text-black dark:!text-white ${classNames}`
+                            ? `!text-black dark:!text-white font-bold ${classNames}`
                             : classNames
                         }
                       >
