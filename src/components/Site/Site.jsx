@@ -32,6 +32,7 @@ import Navigation from "../Navigation/Navigation.jsx";
 import OfflineBanner from "../OfflineBanner/OfflineBanner.jsx";
 import Page from "../Page/Page.jsx";
 import PageNotFound from "../PageNotFound/PageNotFound.jsx";
+import ReadingProgress from "../ReadingProgress/ReadingProgress.jsx";
 import ScrollToTop from "../ScrollToTop/ScrollToTop.jsx";
 import Sidebar from "../Sidebar/Sidebar.jsx";
 import SidebarMobile from "../SidebarMobile/SidebarMobile.jsx";
@@ -297,6 +298,7 @@ function Site(props) {
             { content: "Blog", url: "/blog/", ariaLabel: "webpack blog" },
           ]}
         />
+        {location.pathname !== "/" && <ReadingProgress />}
       </div>
 
       {mounted ? (
