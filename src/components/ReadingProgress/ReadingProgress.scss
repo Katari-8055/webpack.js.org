@@ -32,7 +32,7 @@
 .reading-progress__bar {
   height: 100%;
   width: 100%;
-  background: getColor(denim);
+  background: getColor(light-gray);
   transform: scaleX(0);
   transform-origin: left;
   will-change: transform;
@@ -43,7 +43,7 @@
 /*  Dark mode */
 :root[data-theme="dark"] .reading-progress__bar,
 .dark .reading-progress__bar {
-  background: getColor(cornflower-blue);
+  background: getColor(dusty-blue);
 }
 
 /* Print */
