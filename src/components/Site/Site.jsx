@@ -41,7 +41,6 @@ import Sponsors from "../Sponsors/Sponsors.jsx";
 
 // Load Styling
 import "../../styles/index.scss";
-import "./Site.scss";
 
 // Load Content Tree
 
@@ -217,7 +216,7 @@ function Site(props) {
   }, [location, navigate]);
 
   return (
-    <div className="site">
+    <div className="flex min-h-screen flex-col bg-white">
       <Helmet>
         <html lang="en" />
         <meta charset="utf-8" />
@@ -271,7 +270,7 @@ function Site(props) {
         <meta name="msapplication-TileImage" content="/icon_150x150.png" />
         <meta name="msapplication-TileColor" content="#465e69" />
       </Helmet>
-      <div className="site__header">
+      <div className="fixed z-[100] w-full print:hidden">
         <OfflineBanner />
         <Navigation
           pathname={location.pathname}
@@ -315,7 +314,7 @@ function Site(props) {
         <Route index element={<Splash />} />
         <Route
           element={
-            <Container className="site__content">
+            <Container className="relative mt-[110px] flex flex-auto print:mt-0">
               <Outlet />
             </Container>
           }
@@ -350,7 +349,9 @@ function Site(props) {
         </Route>
       </Routes>
       <ScrollToTop />
-      <Footer />
+      <div className="print:hidden">
+        <Footer />
+      </div>
     </div>
   );
 }
@@ -368,7 +369,7 @@ function PageElement(props) {
     <Fragment>
       <Sponsors />
       <Sidebar
-        className="site__sidebar"
+        className="w-[280px] shrink-0 print:hidden"
         currentPage={currentPage}
         pages={sidebarPages}
       />
